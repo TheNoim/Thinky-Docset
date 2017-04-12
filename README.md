@@ -16,3 +16,5 @@ yarn run build && node Index.js
 npm run build && node Index.js
 ```
 4. Now you can use the docset :)
+
+**_Note_: I am still working on it.**
