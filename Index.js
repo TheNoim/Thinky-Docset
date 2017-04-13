@@ -135,13 +135,28 @@ const Index = [
     },
     {
         type: "Method",
-        name: "thinky.createModel",
+        name: "thinky.createModel()",
         path: "index.html#thinky-createmodel"
     },
     {
         type: "Method",
-        name: "thinky.dbReady",
+        name: "thinky.dbReady()",
         path: "index.html#thinky-dbready"
+    },
+    {
+        type: "Category",
+        name: "Model",
+        path: "index.html#model"
+    },
+    {
+        type: "Method",
+        name: "Model.getTableName()",
+        path: "index.html#gettablename"
+    },
+    {
+        type: "Method",
+        name: "Model.define()",
+        path: "index.html#define"
     }
 ];
 let db;

@@ -244,3 +244,58 @@ var promise = thinky.dbReady();
 ```
 
 Return a promise that will be resolved when the database is available.
+
+___
+
+## Model
+
+A model is returned from (thinky.createModel)[#createmodel]
+
+### getTableName
+
+```javascript
+Model.getTableName();
+```
+
+Return the name of the table used for this model.
+
+Example: Return the name of table used for `PostModel`.
+
+```javascript
+var PostModel = thinky.createModel("Post", {
+    id: type.string(),
+    title: type.string(),
+    author: type.string()
+});
+
+PostModel.getTableName(); // returns "Post"
+```
+
+___
+
+### define
+
+```javascript
+Model.define(key, fn);
+```
+
+Define a function that documents will be available for documents of this Model.
+
+_Example_: Add a method `isAdult` on `Users`.
+
+```javascript
+var User = thinky.createModel("User", {
+    id: type.string(),
+    age: type.number()
+});
+
+User.define("isAdult", function() {
+    return this.age > 18;
+});
+
+var kid = new User({age: 12});
+kid.isAdult(); // false
+
+var grownup = new User({age: 23});
+grownup.isAdult(); // true
+```
